@@ -1,4 +1,33 @@
 package Dist::Zilla::Plugin::SurgicalPodWeaver;
+# ABSTRACT: Surgically apply PodWeaver
+
+=head1 SYNOPSIS
+
+In your L<Dist::Zilla> C<dist.ini>:
+
+    [SurgicalPodWeaver]
+
+In your L<Dist::Dzpl> C<dzpl>:
+
+    plugin 'SurgicalPodWeaver'
+
+To hint that you want to apply PodWeaver:
+
+    package Xyzzy;
+    # Dist::Zilla: +PodWeaver
+
+    ...
+
+=head1 DESCRIPTION
+
+Dist::Zilla::Plugin::SurgicalPodWeaver will only PodWeaver a .pm if:
+
+    1. There exists an # ABSTRACT: ...
+    2. The +PodWeaver hint is present
+
+You can forcefully disable PodWeaver on a .pm by using the C<-PodWeaver> hint
+
+=cut
 
 use Moose;
 extends qw/ Dist::Zilla::Plugin::PodWeaver /;

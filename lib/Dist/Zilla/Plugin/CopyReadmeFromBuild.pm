@@ -1,5 +1,5 @@
 package Dist::Zilla::Plugin::CopyReadmeFromBuild;
-# ABSTRACT: Copy README from a build back to dist root (for SCM inclusion)
+# ABSTRACT: Copy README after building (for SCM inclusion, etc.)
 
 =head1 SYNOPSIS
 
@@ -13,7 +13,7 @@ In your L<Dist::Dzpl> C<dzpl>:
 
 =head1 DESCRIPTION
 
-CopyReadmeFromBuild will automatically copy the README from the build directory. This is so you can commit the README to version control. GitHub, for example, likes to see a README
+CopyReadmeFromBuild will automatically copy the README from the build directory into the distribution directoory. This is so you can commit the README to version control. GitHub, for example, likes to see a README
 
 Dist::Zilla::Plugin::Readme will not like it if you already have a README, so you'll have to disable that plugin, an example of which is:
 

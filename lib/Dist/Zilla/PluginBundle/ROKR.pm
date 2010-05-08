@@ -21,6 +21,8 @@ C<@ROKR::Basic> - L<Dist::Zilla::PluginBundle::ROKR::Basic>
 
 C<CopyReadmeFromBuild> - L<Dist::Zilla::Plugin::CopyReadmeFromBuild>
 
+C<DynamicManifest> - L<Dist::Zilla::Plugin::DynamicManifest>
+
 C<SurgicalPkgVersion> - L<Dist::Zilla::Plugin::SurgicalPkgVersion>
 
 C<SurgicalPodWeaver> - L<Dist::Zilla::Plugin::SurgicalPodWeaver>

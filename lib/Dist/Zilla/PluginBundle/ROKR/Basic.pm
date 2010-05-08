@@ -1,4 +1,50 @@
 package Dist::Zilla::PluginBundle::ROKR::Basic;
+# ABSTRACT: ROKR::Basic PluginBundle for Dist::Zilla
+
+=head1 SYNOPSIS
+
+In your L<Dist::Zilla> C<dist.ini>:
+
+    [@ROKR::Basic]
+
+In your L<Dist::Dzpl> C<dzpl>:
+
+    plugin '@ROKR::Basic'
+
+=head1 DESCRIPTION
+
+This is an enhancement on the @Basic bundle (L<Dist::Zilla::PluginBundle::Basic>) with the following:
+
+    @Basic (without Readme)
+    CopyReadmeFromBuild
+    DynamicManifest
+    SurgicalPkgVersion
+    SurgicalPodWeaver
+
+It is equivalent to:
+
+    [@Filter]
+    bundle = @Basic
+    remove = Readme
+
+    [CopyReadmeFromBuild]
+    [DynamicManifest]
+    [SurgicalPkgVersion]
+    [SurgicalPodWeaver]
+
+=head1 SEE ALSO
+
+L<Dist::Zilla::PluginBundle::Basic>
+
+L<Dist::Zilla::Plugin::CopyReadmeFromBuild>
+
+L<Dist::Zilla::Plugin::DynamicManifest>
+
+L<Dist::Zilla::Plugin::SurgicalPkgVersion>
+
+L<Dist::Zilla::Plugin::SurgicalPodWeaver>
+
+=cut
 
 use Moose;
 

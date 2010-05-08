@@ -8,6 +8,9 @@ use Dzpl
 
     require => q/
         Dist::Zilla
+        Dist::Zilla::PluginBundle::Basic
+        Dist::Zilla::Plugin::PkgVersion
+        Dist::Zilla::Plugin::PodWeaver
 
         [Test]
         Test::Most
