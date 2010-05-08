@@ -14,14 +14,6 @@ use Dzpl
     /;
 ;
 
-plugin
-    '@Basic' => qr/Readme$/,
-    'SurgicalPkgVersion',
-    'SurgicalPodWeaver',
-    'ReadmeFromPod',
-    'DynamicManifest',
-    'CopyReadmeFromBuild',
-;
+{ plugin '@ROKR::Basic' }
 
 run;
-

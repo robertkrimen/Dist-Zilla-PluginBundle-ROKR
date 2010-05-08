@@ -1,0 +1,40 @@
+package Dist::Zilla::PluginBundle::ROKR::Basic;
+
+use Moose;
+
+with qw/ Dist::Zilla::Role::PluginBundle /;
+
+use Dist::Zilla::PluginBundle::Basic;
+use Dist::Zilla::PluginBundle::Filter;
+
+sub bundle_config {
+    my ($self, $section) = @_;
+
+    my @bundle = Dist::Zilla::PluginBundle::Filter->bundle_config({
+        name    => $section->{name} . '/@Basic',
+        payload => {
+            bundle => '@Basic',
+            remove => [
+                # We'll generate README from ReadmeFromPod 
+                'Readme',
+            ],
+        },
+    });
+
+    push @bundle, map {
+        my ( $name, $payload ) = @$_;
+        [ "$section->{name}/$name" => "Dist::Zilla::Plugin::$name" => $payload ];
+    } (
+        [ 'CopyReadmeFromBuild' ],
+        [ 'DynamicManifest' ],
+        [ 'ReadmeFromPod' ],
+        [ 'SurgicalPkgVersion' ],
+        [ 'SurgicalPodWeaver' ],
+    );
+
+    return @bundle;
+}
+
+__PACKAGE__->meta->make_immutable;
+no Moose;
+1;
