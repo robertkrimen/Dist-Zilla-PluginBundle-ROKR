@@ -7,10 +7,13 @@ use Dzpl
     copyright => 'Robert Krimen',
 
     require => q/
+        Config::Identity
         Dist::Zilla
         Dist::Zilla::PluginBundle::Basic
         Dist::Zilla::Plugin::PkgVersion
         Dist::Zilla::Plugin::PodWeaver
+        File::Copy
+        Moose
 
         [Test]
         Test::Most
@@ -18,6 +21,6 @@ use Dzpl
 ;
 
 { plugin '@ROKR::Basic' }
-{ plugin 'UpdateGitHubDescription' }
+{ plugin 'UpdateGitHub' }
 
 run;

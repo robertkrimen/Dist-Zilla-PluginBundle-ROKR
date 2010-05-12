@@ -1,4 +1,4 @@
-package Dist::Zilla::Plugin::UpdateGitHubDescription;
+package Dist::Zilla::Plugin::UpdateGitHub;
 
 use Moose;
 with qw/ Dist::Zilla::Role::AfterBuild /;
