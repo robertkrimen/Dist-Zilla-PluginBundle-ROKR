@@ -7,10 +7,6 @@ In your L<Dist::Zilla> C<dist.ini>:
 
     [CopyReadmeFromBuild]
 
-In your L<Dist::Dzpl> C<dzpl>:
-
-    plugin 'CopyReadmeFromBuild'
-
 =head1 DESCRIPTION
 
 CopyReadmeFromBuild will automatically copy the README from the build directory into the distribution directoory. This is so you can commit the README to version control. GitHub, for example, likes to see a README

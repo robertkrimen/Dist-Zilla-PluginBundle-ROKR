@@ -4,21 +4,17 @@ NAME
 VERSION
     version 0.0010
 
-SYNOPSIS
-    In your Dist::Zilla "dist.ini":
-
-        [@ROKR::Basic]
-
-    In your Dist::Dzpl "dzpl":
-
-        plugin '@ROKR::Basic'
-
 DESCRIPTION
-    Does not actually bundle any Dist::Zilla::Plugin:: (for now)
-
-    Dist::Zilla::PluginBundle::ROKR is a bundling dist for:
-
     @ROKR::Basic - Dist::Zilla::PluginBundle::ROKR::Basic
+
+    This is an enhancement on the @Basic bundle
+    (Dist::Zilla::PluginBundle::Basic), specifically:
+
+        @Basic (without Readme)
+        CopyReadmeFromBuild
+        DynamicManifest
+        SurgicalPkgVersion
+        SurgicalPodWeaver
 
     "CopyReadmeFromBuild" - Dist::Zilla::Plugin::CopyReadmeFromBuild
 
@@ -27,6 +23,8 @@ DESCRIPTION
     "SurgicalPkgVersion" - Dist::Zilla::Plugin::SurgicalPkgVersion
 
     "SurgicalPodWeaver" - Dist::Zilla::Plugin::SurgicalPodWeaver
+
+    "UpdateGitHub" - Dist::Zilla::Plugin::UpdateGitHub
 
 AUTHOR
       Robert Krimen <robertkrimen@gmail.com>

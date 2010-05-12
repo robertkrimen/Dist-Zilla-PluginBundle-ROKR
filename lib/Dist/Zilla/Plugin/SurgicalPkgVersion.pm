@@ -7,10 +7,6 @@ In your L<Dist::Zilla> C<dist.ini>:
 
     [SurgicalPkgVersion]
 
-In your L<Dist::Dzpl> C<dzpl>:
-
-    plugin 'SurgicalPkgVersion'
-
 To hint that you want to apply PkgVersion:
 
     package Xyzzy;

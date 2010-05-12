@@ -7,10 +7,6 @@ In your L<Dist::Zilla> C<dist.ini>:
 
     [SurgicalPodWeaver]
 
-In your L<Dist::Dzpl> C<dzpl>:
-
-    plugin 'SurgicalPodWeaver'
-
 To hint that you want to apply PodWeaver:
 
     package Xyzzy;

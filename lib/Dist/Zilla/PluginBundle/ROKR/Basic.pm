@@ -7,10 +7,6 @@ In your L<Dist::Zilla> C<dist.ini>:
 
     [@ROKR::Basic]
 
-In your L<Dist::Dzpl> C<dzpl>:
-
-    plugin '@ROKR::Basic'
-
 =head1 DESCRIPTION
 
 This is an enhancement on the @Basic bundle (L<Dist::Zilla::PluginBundle::Basic>) with the following:

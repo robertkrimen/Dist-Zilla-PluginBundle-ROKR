@@ -7,10 +7,6 @@ In your L<Dist::Zilla> C<dist.ini>:
 
     [DynamicManifest]
 
-In your L<Dist::Dzpl> C<dzpl>:
-
-    plugin 'DynamicManifest'
-
 =head1 DESCRIPTION
 
 DynamicManifest will build a sane MANIFEST without the need for manually specifying MANIFEST or MANIFEST.SKIP.

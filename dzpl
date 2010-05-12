@@ -20,7 +20,6 @@ use Dzpl
     /;
 ;
 
-{ plugin '@ROKR::Basic' }
-{ plugin 'UpdateGitHub' }
+{ plugin '@ROKR' }
 
 run;

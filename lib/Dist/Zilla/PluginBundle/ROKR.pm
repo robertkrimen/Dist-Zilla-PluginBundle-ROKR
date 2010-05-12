@@ -1,23 +1,17 @@
 package Dist::Zilla::PluginBundle::ROKR;
 # ABSTRACT: ROKR PluginBundle for Dist::Zilla
 
-=head1 SYNOPSIS
-
-In your L<Dist::Zilla> C<dist.ini>:
-
-    [@ROKR::Basic]
-
-In your L<Dist::Dzpl> C<dzpl>:
-
-    plugin '@ROKR::Basic'
-
 =head1 DESCRIPTION
 
-Does not actually bundle any Dist::Zilla::Plugin:: (for now)
-
-Dist::Zilla::PluginBundle::ROKR is a bundling dist for:
-
 C<@ROKR::Basic> - L<Dist::Zilla::PluginBundle::ROKR::Basic>
+
+This is an enhancement on the @Basic bundle (L<Dist::Zilla::PluginBundle::Basic>), specifically:
+
+    @Basic (without Readme)
+    CopyReadmeFromBuild
+    DynamicManifest
+    SurgicalPkgVersion
+    SurgicalPodWeaver
 
 C<CopyReadmeFromBuild> - L<Dist::Zilla::Plugin::CopyReadmeFromBuild>
 
@@ -27,20 +21,23 @@ C<SurgicalPkgVersion> - L<Dist::Zilla::Plugin::SurgicalPkgVersion>
 
 C<SurgicalPodWeaver> - L<Dist::Zilla::Plugin::SurgicalPodWeaver>
 
+C<UpdateGitHub> - L<Dist::Zilla::Plugin::UpdateGitHub>
+
 =cut
 
 use strict;
 use warnings;
 
-sub bundle_config {
+use Moose;
+use Moose::Autobox;
+with qw/ Dist::Zilla::Role::PluginBundle::Easy /;
 
-    die <<_END_
-The \@ROKR bundle does not actually bundle anything (for now)
 
-You probably want to use \@ROKR::Basic
+sub configure {
+    my $self = shift;
 
-_END_
-
+    $self->add_bundle('@ROKR::Basic');
+    $self->add_plugins('UpdateGitHub');
 }
 
 sub parse_hint {

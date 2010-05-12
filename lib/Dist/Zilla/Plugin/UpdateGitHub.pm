@@ -1,7 +1,35 @@
 package Dist::Zilla::Plugin::UpdateGitHub;
+# ABSTRACT: Update your github repository description from abstract on release
+
+=head1 SYNOPSIS
+
+In your L<Dist::Zilla> C<dist.ini>:
+
+    [UpdateGitHub]
+
+=head1 DESCRIPTION
+
+Dist::Zilla::Plugin::UpdateGitHub will automatically update your github repository
+description to be the same as your abstract on release
+
+It will infer the repository name from the distribution name, and get your login/token from C<$HOME/.github> or C<$HOME/.github-identity>
+
+=head1 FUTURE
+
+More complicated repository inferring
+
+Update homepage as well
+
+=head1 SEE ALSO
+
+L<App::GitHub::update>
+
+L<Config::Identity>
+
+=cut
 
 use Moose;
-with qw/ Dist::Zilla::Role::AfterBuild /;
+with qw/ Dist::Zilla::Role::Releaser /;
 
 use Config::Identity::GitHub;
 my $agent = LWP::UserAgent->new;
@@ -33,7 +61,7 @@ sub update {
     return $response;
 }
 
-sub after_build {
+sub release {
     my ( $self ) = @_;
     
     my $repository = $self->zilla->name;
