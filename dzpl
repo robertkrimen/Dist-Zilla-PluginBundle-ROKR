@@ -18,5 +18,6 @@ use Dzpl
 ;
 
 { plugin '@ROKR::Basic' }
+{ plugin 'UpdateGitHubDescription' }
 
 run;

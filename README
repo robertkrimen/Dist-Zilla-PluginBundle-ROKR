@@ -1,0 +1,39 @@
+NAME
+    Dist::Zilla::PluginBundle::ROKR - ROKR PluginBundle for Dist::Zilla
+
+VERSION
+    version 0.0010
+
+SYNOPSIS
+    In your Dist::Zilla "dist.ini":
+
+        [@ROKR::Basic]
+
+    In your Dist::Dzpl "dzpl":
+
+        plugin '@ROKR::Basic'
+
+DESCRIPTION
+    Does not actually bundle any Dist::Zilla::Plugin:: (for now)
+
+    Dist::Zilla::PluginBundle::ROKR is a bundling dist for:
+
+    @ROKR::Basic - Dist::Zilla::PluginBundle::ROKR::Basic
+
+    "CopyReadmeFromBuild" - Dist::Zilla::Plugin::CopyReadmeFromBuild
+
+    "DynamicManifest" - Dist::Zilla::Plugin::DynamicManifest
+
+    "SurgicalPkgVersion" - Dist::Zilla::Plugin::SurgicalPkgVersion
+
+    "SurgicalPodWeaver" - Dist::Zilla::Plugin::SurgicalPodWeaver
+
+AUTHOR
+      Robert Krimen <robertkrimen@gmail.com>
+
+COPYRIGHT AND LICENSE
+    This software is copyright (c) 2010 by Robert Krimen.
+
+    This is free software; you can redistribute it and/or modify it under
+    the same terms as the Perl 5 programming language system itself.
+
