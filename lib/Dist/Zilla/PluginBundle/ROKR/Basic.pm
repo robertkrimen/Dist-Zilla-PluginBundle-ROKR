@@ -1,5 +1,5 @@
 package Dist::Zilla::PluginBundle::ROKR::Basic;
-# ABSTRACT: ROKR::Basic PluginBundle for Dist::Zilla
+# ABSTRACT: Am enhanced take on the @Basic plugin bundle of Dist::Zilla
 
 =head1 SYNOPSIS
 

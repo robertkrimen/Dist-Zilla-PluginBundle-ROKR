@@ -32,6 +32,7 @@ use Moose;
 with qw/ Dist::Zilla::Role::Releaser /;
 
 use Config::Identity::GitHub;
+use LWP::UserAgent;
 my $agent = LWP::UserAgent->new;
 
 sub update {
