@@ -30,7 +30,7 @@ sub after_build {
 
     my $build_root = $data->{build_root};
     my $src;
-    for(qw/ README README.md README.txt README.markdown /) {
+    for(qw/ README README.md README.mkdn README.txt README.markdown /) {
         my $file = $build_root->file( $_ );
         $src = $file and last if -e $file;
     }
