@@ -3,7 +3,7 @@ NAME
     Dist::Zilla
 
 VERSION
-    version 0.0011
+    version 0.0012
 
 DESCRIPTION
     @ROKR::Basic - Dist::Zilla::PluginBundle::ROKR::Basic
