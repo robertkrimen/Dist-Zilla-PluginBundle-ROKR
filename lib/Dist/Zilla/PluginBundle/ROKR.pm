@@ -38,6 +38,7 @@ sub configure {
 
     $self->add_bundle('@ROKR::Basic');
     $self->add_plugins('UpdateGitHub');
+    $self->add_plugins('Git::Tag');
 }
 
 sub parse_hint {
