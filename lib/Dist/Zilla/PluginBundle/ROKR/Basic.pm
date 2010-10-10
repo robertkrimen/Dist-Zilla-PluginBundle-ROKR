@@ -65,13 +65,14 @@ sub bundle_config {
 
     push @bundle, map {
         my ( $name, $payload ) = @$_;
-        [ "$section->{name}/$name" => "Dist::Zilla::Plugin::$name" => $payload ];
+        [ "$section->{name}/$name" => "Dist::Zilla::Plugin::$name" => $payload || {} ];
     } (
         [ 'CopyReadmeFromBuild' ],
         [ 'DynamicManifest' ],
         [ 'ReadmeFromPod' ],
         [ 'SurgicalPkgVersion' ],
         [ 'SurgicalPodWeaver' ],
+#        [ 'PodWeaver' ],
     );
 
     return @bundle;
