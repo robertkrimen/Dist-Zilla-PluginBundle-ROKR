@@ -3,7 +3,7 @@ NAME
     Dist::Zilla
 
 VERSION
-    version 0.0012
+    version 0.0013
 
 DESCRIPTION
     @ROKR::Basic - Dist::Zilla::PluginBundle::ROKR::Basic
@@ -28,7 +28,7 @@ DESCRIPTION
     "UpdateGitHub" - Dist::Zilla::Plugin::UpdateGitHub
 
 AUTHOR
-      Robert Krimen <robertkrimen@gmail.com>
+    Robert Krimen <robertkrimen@gmail.com>
 
 COPYRIGHT AND LICENSE
     This software is copyright (c) 2010 by Robert Krimen.
