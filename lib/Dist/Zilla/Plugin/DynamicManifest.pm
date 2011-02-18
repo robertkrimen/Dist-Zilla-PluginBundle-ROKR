@@ -25,7 +25,8 @@ In essence, DynamicManifest is a built-in MANIFEST.SKIP that will prune everythi
             MANIFEST$|
             Changes$|
             META\.json$|
-            META\.yml$
+            META\.yml$|
+            \.xs$
         )}x
 
 =cut
@@ -47,7 +48,8 @@ sub _build_pruner {
         MANIFEST$|
         Changes$|
         META\.json$|
-        META\.yml$
+        META\.yml$|
+        [^\/]+\.xs$
     )}x }
 }
 
