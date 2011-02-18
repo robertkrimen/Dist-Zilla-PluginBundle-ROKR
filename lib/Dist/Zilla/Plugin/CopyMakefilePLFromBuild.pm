@@ -9,13 +9,19 @@ In your L<Dist::Zilla> C<dist.ini>:
 
 =head1 DESCRIPTION
 
-CopyMakefilePLFromBuild will automatically copy the Makefile.PL from the build directory into the distribution directory. This is so you can commit the Makefile.PL to version control. When building directly from GitHub (via cpanm, for example) you would need a Makefile.PL
+CopyMakefilePLFromBuild will automatically copy the Makefile.PL from
+the build directory into the distribution directory. This is so you
+can commit the Makefile.PL to version control. When building directly
+from GitHub (via cpanm, for example) you would need a Makefile.PL
 
-Dist::Zilla will not like it if you already have a Makefile.PL, so you'll have to disable that plugin, an example of which is:
+Dist::Zilla will not like it if you already have a Makefile.PL, so
+you'll want to prune that file, an example of which is:
 
-    [@Filter]
-    bundle = @Basic
-    remove = MakefilePL
+    [GatherDir]     ; gathers files - including Makefile.PL
+    [PruneFiles]    ; removes some files
+    filenames = Makefile.PL
+    [MakeMaker]     ; generates your Makefile.PL for the build dir
+    [CopyMakefilePLFromBuild] ; copies the generated Makefile.PL back
 
 =cut
 
