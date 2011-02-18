@@ -23,12 +23,24 @@ you'll want to prune that file, an example of which is:
     [MakeMaker]     ; generates your Makefile.PL for the build dir
     [CopyMakefilePLFromBuild] ; copies the generated Makefile.PL back
 
+=head1 AfterBuild/AfterRelease
+
+With the release of 0.0016, this plugin changed to performing the copy during the AfterRelease stage instead of the AfterBuild stage.
+To enable the old behavior, set the environment variable DZIL_CopyFromBuildAfter to 'build':
+
+    $ DZIL_CopyFromBuildAfter=build dzil build 
+
 =cut
 
 use Moose;
-with qw/ Dist::Zilla::Role::AfterRelease /;
+with 'build' eq ( $ENV{ DZIL_CopyFromBuildAfter } || 'release' ) ? 'Dist::Zilla::Role::AfterBuild' : 'Dist::Zilla::Role::AfterRelease';
 
 use File::Copy qw/ copy /;
+
+sub after_build {
+    my $self = shift;
+    return $self->after_release( @_ );
+}
 
 sub after_release {
     my $self = shift;

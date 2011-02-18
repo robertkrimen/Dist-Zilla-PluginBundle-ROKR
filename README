@@ -3,7 +3,7 @@ NAME
     Dist::Zilla
 
 VERSION
-    version 0.0015
+    version 0.0016
 
 DESCRIPTION
     @ROKR::Basic - Dist::Zilla::PluginBundle::ROKR::Basic
@@ -31,7 +31,7 @@ AUTHOR
     Robert Krimen <robertkrimen@gmail.com>
 
 COPYRIGHT AND LICENSE
-    This software is copyright (c) 2010 by Robert Krimen.
+    This software is copyright (c) 2011 by Robert Krimen.
 
     This is free software; you can redistribute it and/or modify it under
     the same terms as the Perl 5 programming language system itself.
