@@ -30,18 +30,16 @@ To enable the old behavior, set the environment variable DZIL_CopyFromBuildAfter
 =cut
 
 use Moose;
-with 'build' eq ( $ENV{ DZIL_CopyFromBuildAfter } || 'release' ) ? 'Dist::Zilla::Role::AfterBuild' : 'Dist::Zilla::Role::AfterRelease';
+with 'Dist::Zilla::Role::AfterBuild';
 
 use File::Copy qw/ copy /;
 
 sub after_build {
     my $self = shift;
-    return $self->after_release( @_ );
-}
-
-sub after_release {
-    my $self = shift;
     my $data = shift;
+
+    if ( $ENV{ DZIL_RELEASING} || 'build' eq ( $ENV{ DZIL_CopyFromBuildAfter } || 'release' ) ) {}
+    else { return }
 
     my $build_root = $data->{build_root};
     my $src;

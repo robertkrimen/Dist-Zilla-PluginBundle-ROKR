@@ -1,6 +1,9 @@
 TODO:
     - Uhh, tests
 
+0.0017 Friday February 18 11:22:57 PST 2011:
+    - Fixed issue with *CopyFromBuild not working
+
 0.0016 Thursday February 17 22:24:47 PST 2011:
     - Added DZIL_CopyFromBuildAfter environment option
     - Run CopyMakefilePLFromBuild and CopyReadmeFromBuild as AfterRelease (DOHERTY)
