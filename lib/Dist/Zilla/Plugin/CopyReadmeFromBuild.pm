@@ -20,11 +20,11 @@ Dist::Zilla::Plugin::Readme will not like it if you already have a README, so yo
 =cut
 
 use Moose;
-with qw/ Dist::Zilla::Role::AfterBuild /;
+with qw/ Dist::Zilla::Role::AfterRelease /;
 
 use File::Copy qw/ copy /;
 
-sub after_build {
+sub after_release {
     my $self = shift;
     my $data = shift;
 
