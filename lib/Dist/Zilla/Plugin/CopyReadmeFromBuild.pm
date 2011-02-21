@@ -23,9 +23,9 @@ you'll have to disable that plugin, an example of which is:
 =head1 AfterBuild/AfterRelease
 
 With the release of 0.0016, this plugin changed to performing the copy during the AfterRelease stage instead of the AfterBuild stage.
-To enable the old behavior, set the environment variable DZIL_CopyFromBuildAfter to 'build':
+To enable the old behavior, set the environment variable DZIL_CopyFromBuildAfterBuild to 1:
 
-    $ DZIL_CopyFromBuildAfter=build dzil build 
+    $ DZIL_CopyFromBuildAfterBuild=1 dzil build 
 
 =cut
 
@@ -38,7 +38,7 @@ sub after_build {
     my $self = shift;
     my $data = shift;
 
-    if ( $ENV{ DZIL_RELEASING} || 'build' eq ( $ENV{ DZIL_CopyFromBuildAfter } || 'release' ) ) {}
+    if ( $ENV{ DZIL_RELEASING} || $ENV{ DZIL_CopyFromBuildAfterBuild } ) {}
     else { return }
 
     my $build_root = $data->{build_root};
