@@ -1,6 +1,9 @@
 TODO:
     - Uhh, tests
 
+0.0019 Tuesday August 23 11:51:06 PDT 2011:
+    - Place CopyReadmeFromBuild into a dedicated distribution (rt70435)
+
 0.0018 Monday February 21 08:37:22 PST 2011:
     - Changed environment variable to _CopyFromBuildAfterBuild
 
