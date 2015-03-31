@@ -12,6 +12,7 @@ In your L<Dist::Zilla> C<dist.ini>:
 This is an enhancement on the @Basic bundle (L<Dist::Zilla::PluginBundle::Basic>) with the following:
 
     @Basic (without Readme)
+    MetaJSON
     CopyReadmeFromBuild
     DynamicManifest
     SurgicalPkgVersion
@@ -23,6 +24,7 @@ It is equivalent to:
     bundle = @Basic
     remove = Readme
 
+    [MetaJSON]
     [CopyReadmeFromBuild]
     [DynamicManifest]
     [SurgicalPkgVersion]
@@ -31,6 +33,8 @@ It is equivalent to:
 =head1 SEE ALSO
 
 L<Dist::Zilla::PluginBundle::Basic>
+
+L<Dist::Zilla::Plugin::MetaJSON>
 
 L<Dist::Zilla::Plugin::CopyReadmeFromBuild>
 
@@ -67,6 +71,7 @@ sub bundle_config {
         my ( $name, $payload ) = @$_;
         [ "$section->{name}/$name" => "Dist::Zilla::Plugin::$name" => $payload || {} ];
     } (
+        [ 'MetaJSON' ],
         [ 'CopyReadmeFromBuild' ],
         [ 'DynamicManifest' ],
         [ 'ReadmeFromPod' ],

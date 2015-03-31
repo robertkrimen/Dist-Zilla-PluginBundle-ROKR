@@ -29,7 +29,6 @@ use strict;
 use warnings;
 
 use Moose;
-use Moose::Autobox;
 with qw/ Dist::Zilla::Role::PluginBundle::Easy /;
 
 
